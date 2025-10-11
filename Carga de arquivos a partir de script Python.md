@@ -181,10 +181,76 @@ print(acidentes2020_por_pessoas.head())
 
  Usar ferramentas especializadas na modelagem de dados facilita muito esse trabalho, pois elas já possuem muitas funcionalidades que poupam tempo e garantem consistência dos resultados. No final, é esperado que o processo seja automatizado, mas a construção da modelagem depende de profissionais que entendam bem de detalhes do negócio.
 
-## Considere o seguinte cenário: você foi contratado para treinar alguns dos analistas da Aço para o Progresso S.A. na modelagem de dados. Seu trabalho é muito importante e, se for bem-sucedido, você dará outros treinamentos na empresa. Nesse cenário, qual seria a estratégia que você adotaria?
+### Considere o seguinte cenário: você foi contratado para treinar alguns dos analistas da Aço para o Progresso S.A. na modelagem de dados. Seu trabalho é muito importante e, se for bem-sucedido, você dará outros treinamentos na empresa. Nesse cenário, qual seria a estratégia que você adotaria?
   
    > Ensinar pessoas sempre é um grande privilégio e uma oportunidade de aprender também através da natural troca de experiências. No cenário descrito, é importante entender que um treinamento deve resultar em profissionais qualificados. Portanto, a melhor forma de aprender modelagem é trabalhar em um exemplo real, porém pequeno, em que seja possível verificar a aplicação dos conceitos na prática com a utilização de uma ferramenta específica para modelagem.
 
 
-# Introdução à modelagem dimensional no Power BI
+### Ao importar a tabela Clientes no formato CSV e a tabela Endereços no formato Excel, utilizando o Power Query, temos o esquema a seguir, em que as colunas ID_Cliente e ID_Endereço representam chaves primárias:
 
+Clientes	Endereços
+ID_Cliente	ID_Endereço
+Nome Cliente	Endereço 1
+Telefone	Cidade
+E-mail	Estado
+ID_Endereço	País
+CEP
+Elaborada por Humberto Cesar Souza Lomeu.
+
+Precisamos criar uma consulta com um cliente por linha, e cada linha deve conter Cidade, Estado e País de cada cliente. Que recurso do Power BI devemos aplicar?
+
+    > A) Combinar as tabelas Clientes e Endereços.
+
+
+
+###  Que recurso podemos usar no Power BI para eliminar registros de dados não preenchidos ou em duplicata?
+
+ > B) Remover linhas.
+Comentário
+Parabéns! A alternativa "B" está correta.
+
+
+A interface do Power BI possui o recurso “Reduzir linhas”, que tem a opção “Remover linhas”, cujos principais recursos são: Remover Duplicadas, Remover Linhas em Branco e Remover Erros. Essa limpeza de dados deve ser feita caso a caso, pois o Power BI não possui funcionalidade para correção automática desses problemas.
+
+
+###  A Invista Bem S.A. trabalha com grandes volumes de dados de diferentes formatos que alimentam um sistema de suporte à tomada de decisão. Qual foi o principal risco da Invista Bem S.A. ao trabalhar com esses dados?
+
+ > C) Utilizar dados inconsistentes que prejudicaram as respostas do sistema de suporte à tomada de decisão.
+
+Comentário
+Um sistema de suporte à tomada de decisão possui regras ou é treinado para produzir respostas que dependem dos dados de entrada. No caso da Invista Bem S.A., foram detectadas inconsistências nos dados que levaram à produção de respostas também inconsistentes do sistema de suporte à tomada de decisão.
+
+### Como você leu no texto, uma das fontes de dados que a Invista Bem S.A. utiliza é a de grupos de redes sociais. Dentro da empresa, é conhecido que esses dados não são confiáveis. Como esses dados podem ser modelados sem prejudicar a consistência da informação?
+ >  A) Devem receber alguma marcação sobre o nível de confiança.
+
+Comentário
+Utilizar dados de fontes não confiáveis é um risco. No caso da Invista Bem S.A., utilizar esse tipo de dado é uma decisão que faz parte do processo de tomada de decisão. Portanto, é importante que esses dados recebam uma marcação que permita entender o quanto são confiáveis, pois eles podem ser usados como fontes ponderadoras para dar suporte para a tomada de decisão.
+
+### Considere o seguinte cenário: você foi contratado pela Invista Bem S.A. para melhorar o modelo de dados. Existem muitas expectativas sobre o resultado do seu trabalho. Com base em sua experiência, como você cumpriria essa missão? De que maneira iria demonstrar que seu trabalho foi bem-sucedido?
+
+> A Invista Bem S.A. é uma empresa de investimentos que utiliza grandes volumes de dados de diversas fontes. Portanto, a primeira ação a ser tomada é mapear todas essas fontes e medir a dimensão do volume de dados. Cumprida essa etapa, vem a análise do processo de limpeza e transformação de cada um dos dados. Aqui, é fundamental fazer o registro de todas as ocorrências de inconsistências, pois isso será muito importante para demonstrar, posteriormente, como sua intervenção gerou resultados.
+
+
+### A sintaxe da linguagem M é dividida em dois blocos:
+    > let - Em que são definidas as variáveis.
+    > in - Saída do que foi definido no primeiro bloco.
+
+
+
+### Após algumas transformações, o usuário obteve o seguinte código:
+#"Colunas Removidas" = Table.RemoveColumns(#"Tipo Alterado",{"CPF"}), #"Duplicatas Removidas" = Table.Distinct(#"Colunas Removidas", {"TITULO"}), #"Texto Substituído inserido" = Table.AddColumn(#"Duplicatas Removidas", "Texto Substituído", each Text.Replace(Text.Lower([TITULO]), "s", "Senho"), type text)
+Caso ele deseje retirar a etapa em destaque, o que deve ser feito para concluir seu objetivo?
+
+    > E) Deletar a linha da etapa em destaque e trocar o nome da etapa anterior na etapa #"Texto Substituído inserido".
+
+Comentário
+Parabéns! A alternativa "E" está correta.
+Por possuir uma estrutura de etapas, uma função na linguagem M sempre faz referência à função anterior. Então, ao simplesmente deletar a linha que não será utilizada, a função seguinte buscará por uma função que não existe mais, e o código não funcionará.
+
+### Um usuário utilizou a função SWITCH na barra de fórmulas e a copiou para o Editor Avançado, porém, ao clicar em concluir, nada acontece. O que o usuário fez de errado?
+
+    >  B) O usuário utilizou uma função de DAX em um código em linguagem M.
+
+Comentário
+Parabéns! A alternativa "B" está correta.
+SWITCH é uma função da linguagem DAX, e o Editor Avançado é uma interface da linguagem M, que não permite a utilização de funções de DAX. Embora muitas funcionalidades das duas linguagens sejam comuns, suas sintaxes não suportam comandos de uma linguagem em scripts da outra.
