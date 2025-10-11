@@ -69,7 +69,10 @@ for ano, url in ARQUIVOS.items():
     if df.empty:
         print(f"⚠️ CSV do ano {ano} vazio ou inválido")
         continue
+    
+    nome_var = f"acidentes_{ano}"
+    globals()[nome_var] = df
 
-    acidentes[ano] = df
-    print(f"\n✅ Acidentes {ano}:")
-    print(acidentes[ano].head())
+    print(f"\n✅ {nome_var}:")
+    print(globals()[nome_var].head())
+    
