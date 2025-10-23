@@ -1,0 +1,20 @@
+
+ARQUIVOS = {
+    2025: "https://drive.google.com/uc?id=1-G3MdmHBt6CprDwcW99xxC4BZ2DU5ryR",
+    2024: "https://drive.google.com/uc?id=14lB0vqMFkaZj8HZ44b0njYgxs9nAN8KO",
+    2023: "https://drive.google.com/uc?id=1-WO3SfNrwwZ5_l7fRTiwBKRw7mi1-HUq",
+    2022: "https://drive.google.com/uc?id=1PRQjuV5gOn_nn6UNvaJyVURDIfbSAK4-",
+    2021: "https://drive.google.com/uc?id=12xH8LX9aN2gObR766YN3cMcuycwyCJDz",
+    2020: "https://drive.google.com/uc?id=1esu6IiH5TVTxFoedv6DBGDd01Gvi8785",
+    2019: "https://drive.google.com/uc?id=1pN3fn2wY34GH6cY-gKfbxRJJBFE0lb_l",
+    2018: "https://drive.google.com/uc?id=1cM4IgGMIiR-u4gBIH5IEe3DcvBvUzedi",
+    2017: "https://drive.google.com/uc?id=1HPLWt5f_l4RIX3tKjI4tUXyZOev52W0N",
+    2016: "https://drive.google.com/uc?id=16qooQl_ySoW61CrtsBbreBVNPYlEkoYm",
+    2015: "https://drive.google.com/uc?id=1DyqR5FFcwGsamSag-fGm13feQt0Y-3Da",
+    2014: "https://drive.google.com/uc?id=1FpF5wTBsRDkEhLm3z2g8XDiXr9SO9Uk8",
+    2013: "https://drive.google.com/uc?id=1p_7lw9RzkINfscYAZSmc-Z9Ci4ZPJyEr",
+    2012: "https://drive.google.com/uc?id=18Yz2prqKSLthrMmW-73vrOiDmKTCL6xE",
+    2011: "https://drive.google.com/uc?id=1_yU6FRh8M7USjiChQwyF20NtY48GTmEX",
+    2010: "https://drive.google.com/uc?id=1qkVatg0pC_zosuBs0NCSgEXDJvBbnTYC",
+    2009: "https://drive.google.com/uc?id=1qkVatg0pC_zosuBs0NCSgEXDJvBbnTYC",
+}

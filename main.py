@@ -1,0 +1,4 @@
+from scripts import get_dados_acidentes_por_ocorrencia_PRF
+
+acidentes_consolidado = get_dados_acidentes_por_ocorrencia_PRF.main()
+
